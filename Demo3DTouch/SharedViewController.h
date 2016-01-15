@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SharedViewController.h
 //  Demo3DTuch
 //
 //  Created by 张林峰 on 16/1/12.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SharedViewController : UIViewController
 
 @end
-

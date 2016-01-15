@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		D129366B1C47A6950054DEB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D129366A1C47A6950054DEB9 /* main.m */; };
 		D129366E1C47A6950054DEB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D129366D1C47A6950054DEB9 /* AppDelegate.m */; };
-		D12936711C47A6950054DEB9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12936701C47A6950054DEB9 /* ViewController.m */; };
-		D12936741C47A6950054DEB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12936721C47A6950054DEB9 /* Main.storyboard */; };
 		D12936761C47A6950054DEB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D12936751C47A6950054DEB9 /* Assets.xcassets */; };
 		D12936791C47A6950054DEB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12936771C47A6950054DEB9 /* LaunchScreen.storyboard */; };
 		D12936841C47A6950054DEB9 /* Demo3DTouchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D12936831C47A6950054DEB9 /* Demo3DTouchTests.m */; };
 		D129368F1C47A6950054DEB9 /* Demo3DTouchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D129368E1C47A6950054DEB9 /* Demo3DTouchUITests.m */; };
+		D12936A51C47A6E00054DEB9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12936A01C47A6E00054DEB9 /* SearchViewController.m */; };
+		D12936A61C47A6E00054DEB9 /* SharedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12936A21C47A6E00054DEB9 /* SharedViewController.m */; };
+		D12936A91C47A7A30054DEB9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12936A81C47A7A30054DEB9 /* ViewController.m */; };
+		D12936AB1C47A8250054DEB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12936AA1C47A8250054DEB9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +41,6 @@
 		D129366A1C47A6950054DEB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D129366C1C47A6950054DEB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D129366D1C47A6950054DEB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D129366F1C47A6950054DEB9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D12936701C47A6950054DEB9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D12936731C47A6950054DEB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D12936751C47A6950054DEB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D12936781C47A6950054DEB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D129367A1C47A6950054DEB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +50,13 @@
 		D129368A1C47A6950054DEB9 /* Demo3DTouchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo3DTouchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D129368E1C47A6950054DEB9 /* Demo3DTouchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo3DTouchUITests.m; sourceTree = "<group>"; };
 		D12936901C47A6950054DEB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D129369F1C47A6E00054DEB9 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		D12936A01C47A6E00054DEB9 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		D12936A11C47A6E00054DEB9 /* SharedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedViewController.h; sourceTree = "<group>"; };
+		D12936A21C47A6E00054DEB9 /* SharedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedViewController.m; sourceTree = "<group>"; };
+		D12936A71C47A7A30054DEB9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D12936A81C47A7A30054DEB9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D12936AA1C47A8250054DEB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +109,14 @@
 			children = (
 				D129366C1C47A6950054DEB9 /* AppDelegate.h */,
 				D129366D1C47A6950054DEB9 /* AppDelegate.m */,
-				D129366F1C47A6950054DEB9 /* ViewController.h */,
-				D12936701C47A6950054DEB9 /* ViewController.m */,
-				D12936721C47A6950054DEB9 /* Main.storyboard */,
+				D12936A71C47A7A30054DEB9 /* ViewController.h */,
+				D12936A81C47A7A30054DEB9 /* ViewController.m */,
+				D129369F1C47A6E00054DEB9 /* SearchViewController.h */,
+				D12936A01C47A6E00054DEB9 /* SearchViewController.m */,
+				D12936A11C47A6E00054DEB9 /* SharedViewController.h */,
+				D12936A21C47A6E00054DEB9 /* SharedViewController.m */,
 				D12936751C47A6950054DEB9 /* Assets.xcassets */,
+				D12936AA1C47A8250054DEB9 /* Main.storyboard */,
 				D12936771C47A6950054DEB9 /* LaunchScreen.storyboard */,
 				D129367A1C47A6950054DEB9 /* Info.plist */,
 				D12936691C47A6950054DEB9 /* Supporting Files */,
@@ -207,6 +217,7 @@
 				TargetAttributes = {
 					D12936651C47A6950054DEB9 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = PW34BQUQU8;
 					};
 					D129367E1C47A6950054DEB9 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -243,9 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D12936AB1C47A8250054DEB9 /* Main.storyboard in Resources */,
 				D12936791C47A6950054DEB9 /* LaunchScreen.storyboard in Resources */,
 				D12936761C47A6950054DEB9 /* Assets.xcassets in Resources */,
-				D12936741C47A6950054DEB9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +281,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D12936711C47A6950054DEB9 /* ViewController.m in Sources */,
+				D12936A61C47A6E00054DEB9 /* SharedViewController.m in Sources */,
+				D12936A51C47A6E00054DEB9 /* SearchViewController.m in Sources */,
 				D129366E1C47A6950054DEB9 /* AppDelegate.m in Sources */,
 				D129366B1C47A6950054DEB9 /* main.m in Sources */,
+				D12936A91C47A7A30054DEB9 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,14 +321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D12936721C47A6950054DEB9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D12936731C47A6950054DEB9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D12936771C47A6950054DEB9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -413,7 +418,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Demo3DTouch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlf.Demo3DTouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,7 +431,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Demo3DTouch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlf.Demo3DTouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
