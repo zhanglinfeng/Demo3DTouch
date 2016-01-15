@@ -20,12 +20,39 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //应用图标上的3D touch快捷选项
+    //创建应用图标上的3D touch快捷选项
     [self creatShortcutItem];
     
-    //是否是从标签进入的app，如果是则处理结束逻辑后，返回NO，防止处理逻辑被反复回调。
-    UIApplicationShortcutItem *item = [launchOptions valueForKey:UIApplicationLaunchOptionsShortcutItemKey];
-    if (item) {
+    UIApplicationShortcutItem *shortcutItem = [launchOptions valueForKey:UIApplicationLaunchOptionsShortcutItemKey];
+    //如果是从快捷选项标签启动app，则根据不同标识执行不同操作，然后返回NO，防止调用- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
+    if (shortcutItem) {
+        //判断先前我们设置的快捷选项标签唯一标识，根据不同标识执行不同操作
+        if([shortcutItem.type isEqualToString:@"com.mycompany.myapp.one"]){
+            NSArray *arr = @[@"hello 3D Touch"];
+            UIActivityViewController *vc = [[UIActivityViewController alloc]initWithActivityItems:arr applicationActivities:nil];
+            [self.window.rootViewController presentViewController:vc animated:YES completion:^{
+            }];
+        } else if ([shortcutItem.type isEqualToString:@"com.mycompany.myapp.search"]) {//进入搜索界面
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            ViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
+            UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
+            
+            self.window.rootViewController = mainNav;
+            [self.window makeKeyAndVisible];
+            
+            SearchViewController *childVC = [storyboard instantiateViewControllerWithIdentifier:@"searchController"];
+            [mainNav pushViewController:childVC animated:NO];
+        } else if ([shortcutItem.type isEqualToString:@"com.mycompany.myapp.share"]) {//进入分享界面
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            ViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
+            UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
+            
+            self.window.rootViewController = mainNav;
+            [self.window makeKeyAndVisible];
+            
+            SharedViewController *childVC = [storyboard instantiateViewControllerWithIdentifier:@"sharedController"];
+            [mainNav pushViewController:childVC animated:NO];
+        }
         return NO;
     }
     return YES;
@@ -53,6 +80,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+//如果app在后台，通过快捷选项标签进入app，则调用该方法，如果app不在后台已杀死，则处理通过快捷选项标签进入app的逻辑在- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions中
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
     //判断先前我们设置的快捷选项标签唯一标识，根据不同标识执行不同操作
     if([shortcutItem.type isEqualToString:@"com.mycompany.myapp.one"]){
@@ -81,9 +109,13 @@
         SharedViewController *childVC = [storyboard instantiateViewControllerWithIdentifier:@"sharedController"];
         [mainNav pushViewController:childVC animated:NO];
     }
+    
+    if (completionHandler) {
+        completionHandler(YES);
+    }
 }
 
-//应用图标上的3D touch
+//创建应用图标上的3D touch快捷选项
 - (void)creatShortcutItem {
     //创建系统风格的icon
     UIApplicationShortcutIcon *icon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeShare];
@@ -96,7 +128,6 @@
     
     //添加到快捷选项数组
     [UIApplication sharedApplication].shortcutItems = @[item];
-    
 }
 
 @end
