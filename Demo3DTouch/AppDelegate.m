@@ -20,6 +20,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
+    UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
+    self.window.rootViewController = mainNav;
+    [self.window makeKeyAndVisible];
+    
     //创建应用图标上的3D touch快捷选项
     [self creatShortcutItem];
     
@@ -33,23 +39,9 @@
             [self.window.rootViewController presentViewController:vc animated:YES completion:^{
             }];
         } else if ([shortcutItem.type isEqualToString:@"com.mycompany.myapp.search"]) {//进入搜索界面
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
-            UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
-            
-            self.window.rootViewController = mainNav;
-            [self.window makeKeyAndVisible];
-            
             SearchViewController *childVC = [storyboard instantiateViewControllerWithIdentifier:@"searchController"];
             [mainNav pushViewController:childVC animated:NO];
         } else if ([shortcutItem.type isEqualToString:@"com.mycompany.myapp.share"]) {//进入分享界面
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
-            UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
-            
-            self.window.rootViewController = mainNav;
-            [self.window makeKeyAndVisible];
-            
             SharedViewController *childVC = [storyboard instantiateViewControllerWithIdentifier:@"sharedController"];
             [mainNav pushViewController:childVC animated:NO];
         }
@@ -82,6 +74,13 @@
 
 //如果app在后台，通过快捷选项标签进入app，则调用该方法，如果app不在后台已杀死，则处理通过快捷选项标签进入app的逻辑在- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions中
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
+    UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
+    self.window.rootViewController = mainNav;
+    [self.window makeKeyAndVisible];
+    
     //判断先前我们设置的快捷选项标签唯一标识，根据不同标识执行不同操作
     if([shortcutItem.type isEqualToString:@"com.mycompany.myapp.one"]){
         NSArray *arr = @[@"hello 3D Touch"];
@@ -89,23 +88,9 @@
         [self.window.rootViewController presentViewController:vc animated:YES completion:^{
         }];
     } else if ([shortcutItem.type isEqualToString:@"com.mycompany.myapp.search"]) {//进入搜索界面
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
-        UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
-        
-        self.window.rootViewController = mainNav;
-        [self.window makeKeyAndVisible];
-        
         SearchViewController *childVC = [storyboard instantiateViewControllerWithIdentifier:@"searchController"];
         [mainNav pushViewController:childVC animated:NO];
     } else if ([shortcutItem.type isEqualToString:@"com.mycompany.myapp.share"]) {//进入分享界面
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ViewController *mainView = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
-        UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainView];
-        
-        self.window.rootViewController = mainNav;
-        [self.window makeKeyAndVisible];
-        
         SharedViewController *childVC = [storyboard instantiateViewControllerWithIdentifier:@"sharedController"];
         [mainNav pushViewController:childVC animated:NO];
     }
